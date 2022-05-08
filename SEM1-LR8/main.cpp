@@ -1,6 +1,8 @@
-#include <iostream>
+#include "task1.h"
+#include "task2.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // task1();
+    // task2();
 }
