@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM3-LR5", "SEM3-LR5\SEM3-L
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM3-LR6", "SEM3-LR6\SEM3-LR6.vcxproj", "{FE4751B2-3ADA-4AD5-B41A-C0DC30E23801}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM3-LR7", "SEM3-LR7\SEM3-LR7.vcxproj", "{ACC0325C-E241-4E90-A0F6-46AFAC966790}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,18 @@ Global
 		{FE4751B2-3ADA-4AD5-B41A-C0DC30E23801}.Release|x64.Build.0 = Release|x64
 		{FE4751B2-3ADA-4AD5-B41A-C0DC30E23801}.Release|x86.ActiveCfg = Release|x64
 		{FE4751B2-3ADA-4AD5-B41A-C0DC30E23801}.Release|x86.Build.0 = Release|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Debug|Any CPU.Build.0 = Debug|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Debug|x64.ActiveCfg = Debug|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Debug|x64.Build.0 = Debug|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Debug|x86.ActiveCfg = Debug|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Debug|x86.Build.0 = Debug|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|Any CPU.ActiveCfg = Release|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|Any CPU.Build.0 = Release|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|x64.ActiveCfg = Release|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|x64.Build.0 = Release|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|x86.ActiveCfg = Release|x64
+		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
