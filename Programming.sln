@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEM4-LR4", "SEM4-LR4\SEM4-L
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM3-LR4", "SEM3-LR4\SEM3-LR4.vcxproj", "{4A12D2CD-476F-4324-B9AB-65D7499C19A9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM3-LR5", "SEM3-LR5\SEM3-LR5.vcxproj", "{FD255268-6CE5-46CA-A0A0-376557A55A06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,18 @@ Global
 		{4A12D2CD-476F-4324-B9AB-65D7499C19A9}.Release|x64.Build.0 = Release|x64
 		{4A12D2CD-476F-4324-B9AB-65D7499C19A9}.Release|x86.ActiveCfg = Release|x64
 		{4A12D2CD-476F-4324-B9AB-65D7499C19A9}.Release|x86.Build.0 = Release|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Debug|Any CPU.Build.0 = Debug|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Debug|x64.ActiveCfg = Debug|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Debug|x64.Build.0 = Debug|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Debug|x86.ActiveCfg = Debug|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Debug|x86.Build.0 = Debug|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Release|Any CPU.ActiveCfg = Release|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Release|Any CPU.Build.0 = Release|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Release|x64.ActiveCfg = Release|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Release|x64.Build.0 = Release|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Release|x86.ActiveCfg = Release|x64
+		{FD255268-6CE5-46CA-A0A0-376557A55A06}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
