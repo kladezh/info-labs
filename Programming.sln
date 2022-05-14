@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM3-LR6", "SEM3-LR6\SEM3-L
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM3-LR7", "SEM3-LR7\SEM3-LR7.vcxproj", "{ACC0325C-E241-4E90-A0F6-46AFAC966790}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SEM4-LR1", "SEM4-LR1\SEM4-LR1.vcxproj", "{5612D588-3867-4142-8CFF-1F84AB74060D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,6 +169,18 @@ Global
 		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|x64.Build.0 = Release|x64
 		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|x86.ActiveCfg = Release|x64
 		{ACC0325C-E241-4E90-A0F6-46AFAC966790}.Release|x86.Build.0 = Release|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Debug|Any CPU.Build.0 = Debug|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Debug|x64.ActiveCfg = Debug|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Debug|x64.Build.0 = Debug|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Debug|x86.ActiveCfg = Debug|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Debug|x86.Build.0 = Debug|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Release|Any CPU.ActiveCfg = Release|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Release|Any CPU.Build.0 = Release|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Release|x64.ActiveCfg = Release|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Release|x64.Build.0 = Release|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Release|x86.ActiveCfg = Release|x64
+		{5612D588-3867-4142-8CFF-1F84AB74060D}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,92 @@
+<UI version="4.0" >
+ <class>WidgetClass</class>
+ <widget class="QWidget" name="WidgetClass" >
+	 <property name="geometry">
+		 <rect>
+			 <x>0</x>
+			 <y>0</y>
+			 <width>1436</width>
+			 <height>382</height>
+		 </rect>
+	 </property>
+	 <property name="windowTitle">
+		 <string>Widget</string>
+	 </property>
+	 <widget class="QTableView" name="tableView">
+		 <property name="geometry">
+			 <rect>
+				 <x>40</x>
+				 <y>20</y>
+				 <width>1021</width>
+				 <height>331</height>
+			 </rect>
+		 </property>
+	 </widget>
+	 <widget class="QLabel" name="labelInfo">
+		 <property name="geometry">
+			 <rect>
+				 <x>1080</x>
+				 <y>140</y>
+				 <width>271</width>
+				 <height>211</height>
+			 </rect>
+		 </property>
+		 <property name="font">
+			 <font>
+				 <pointsize>16</pointsize>
+			 </font>
+		 </property>
+		 <property name="styleSheet">
+			 <string notr="true">background: #fff;</string>
+		 </property>
+		 <property name="frameShape">
+			 <enum>QFrame::Box</enum>
+		 </property>
+		 <property name="text">
+			 <string/>
+		 </property>
+	 </widget>
+	 <widget class="QPushButton" name="pushButtonGenerate">
+		 <property name="geometry">
+			 <rect>
+				 <x>1090</x>
+				 <y>20</y>
+				 <width>181</width>
+				 <height>41</height>
+			 </rect>
+		 </property>
+		 <property name="font">
+			 <font>
+				 <pointsize>15</pointsize>
+			 </font>
+		 </property>
+		 <property name="text">
+			 <string>Generate</string>
+		 </property>
+	 </widget>
+	 <widget class="QLabel" name="label">
+		 <property name="geometry">
+			 <rect>
+				 <x>1090</x>
+				 <y>100</y>
+				 <width>181</width>
+				 <height>41</height>
+			 </rect>
+		 </property>
+		 <property name="font">
+			 <font>
+				 <pointsize>15</pointsize>
+			 </font>
+		 </property>
+		 <property name="text">
+			 <string>Output:</string>
+		 </property>
+	 </widget>
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources>
+   <include location="widget.qrc"/>
+ </resources>
+ <connections/>
+</UI>
