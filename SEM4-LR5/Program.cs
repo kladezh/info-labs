@@ -58,7 +58,7 @@ namespace SEM4_LR5
                 Console.WriteLine(i);
         }
 
-        static void Task2() 
+        static void Task2()
         {
             string filepath = "C:\\Users\\yamsh\\Desktop\\lab5_2.txt";
             string content = ReadFileContent(filepath);
@@ -83,10 +83,34 @@ namespace SEM4_LR5
                 Console.WriteLine(line);
         }
 
+        static void Task3()
+        {
+            string filepath = "C:\\Users\\yamsh\\Desktop\\lab5_3.txt";
+            string content = ReadFileContent(filepath);
+
+            Console.WriteLine("Строки файла:");
+            Console.WriteLine(content + "\n");
+
+            Regex regex = new Regex("(?<=\\().+?(?=\\))");
+
+            string replacedContent = regex.Replace(content, new MatchEvaluator((Match match) =>
+            {
+                string value = match.ToString();
+
+                Console.WriteLine("Match: " + value);
+
+                return value[0].ToString();
+            }));
+
+            Console.WriteLine("\nИзмененные строки файла:");
+            Console.WriteLine(replacedContent);
+        }
+
         static void Main(string[] args)
         {
             //Task1();
             //Task2();
+            //Task3();
 
             Console.ReadKey();
         }
