@@ -33,7 +33,8 @@ namespace SEM4_LR5
         {
             string content = ReadFileContent("fortask1.txt");
 
-            string[] lines = content.Split('\n');
+            string[] lines = content.Split(new string[] { Environment.NewLine }, 
+                StringSplitOptions.RemoveEmptyEntries);
 
             Console.WriteLine("Строки файла:");
             for (int i = 0; i < lines.Length; i++)
@@ -61,7 +62,9 @@ namespace SEM4_LR5
         {
             string content = ReadFileContent("fortask2.txt");
 
-            List<string> lines = content.Split('\n').ToList();
+            List<string> lines = content.Split(new string[] { Environment.NewLine }, 
+                StringSplitOptions.RemoveEmptyEntries)
+                .ToList();
 
             Console.WriteLine("Строки файла:\n");
             foreach (string line in lines)
