@@ -31,7 +31,7 @@ namespace SEM4_LR5
 
         static void Task1()
         {
-            string filepath = "C:\\Users\\yamsh\\Desktop\\lab5.txt";
+            string filepath = "C:\\Users\\yamsh\\Desktop\\lab5_1.txt";
             string content = ReadFileContent(filepath);
 
             string[] lines = content.Split('\n');
@@ -57,9 +57,36 @@ namespace SEM4_LR5
             foreach (int i in matchesLineIndexes)
                 Console.WriteLine(i);
         }
+
+        static void Task2() 
+        {
+            string filepath = "C:\\Users\\yamsh\\Desktop\\lab5_2.txt";
+            string content = ReadFileContent(filepath);
+
+            List<string> lines = content.Split('\n').ToList();
+
+            Console.WriteLine("Строки файла:\n");
+            foreach (string line in lines)
+                Console.WriteLine(line);
+
+            Regex regex = new Regex("[^a-zA-z]*\\d+[^a-zA-z]+");
+
+            List<string> matchesLines = new List<string>();
+            foreach (string line in lines)
+            {
+                if (regex.IsMatch(line))
+                    matchesLines.Add(line);
+            }
+
+            Console.WriteLine("\nСтроки, в которых содержится в качестве слова целое число:\n");
+            foreach (string line in matchesLines)
+                Console.WriteLine(line);
+        }
+
         static void Main(string[] args)
         {
-            Task1();
+            //Task1();
+            //Task2();
 
             Console.ReadKey();
         }
