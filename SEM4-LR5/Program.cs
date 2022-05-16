@@ -21,7 +21,28 @@ namespace SEM4_LR5
 
                 string content = reader.ReadToEnd();
 
-                Console.WriteLine(content);
+                string[] lines = content.Split('\n');
+
+                Console.WriteLine("Строки файла:");
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    Console.WriteLine($"[{i}] => " + lines[i]);
+                }
+
+                Regex regex = new Regex("\\*");
+
+                List<int> matchesLineIndexes = new List<int>();
+                for (int i = 0; i < lines.Length; i ++)
+                {
+                    if (regex.IsMatch(lines[i]))
+                    {
+                        matchesLineIndexes.Add(i);
+                    }
+                }
+
+                Console.WriteLine("\nНомера строк, в которых встречается символ \'*\'");
+                foreach (int i in matchesLineIndexes)
+                    Console.WriteLine(i);
             }
             catch (Exception exc)
             {
