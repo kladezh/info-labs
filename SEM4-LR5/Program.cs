@@ -31,8 +31,7 @@ namespace SEM4_LR5
 
         static void Task1()
         {
-            string filepath = "C:\\Users\\yamsh\\Desktop\\lab5_1.txt";
-            string content = ReadFileContent(filepath);
+            string content = ReadFileContent("fortask1.txt");
 
             string[] lines = content.Split('\n');
 
@@ -60,8 +59,7 @@ namespace SEM4_LR5
 
         static void Task2()
         {
-            string filepath = "C:\\Users\\yamsh\\Desktop\\lab5_2.txt";
-            string content = ReadFileContent(filepath);
+            string content = ReadFileContent("fortask2.txt");
 
             List<string> lines = content.Split('\n').ToList();
 
@@ -85,8 +83,7 @@ namespace SEM4_LR5
 
         static void Task3()
         {
-            string filepath = "C:\\Users\\yamsh\\Desktop\\lab5_3.txt";
-            string content = ReadFileContent(filepath);
+            string content = ReadFileContent("fortask3.txt");
 
             Console.WriteLine("Строки файла:");
             Console.WriteLine(content + "\n");
