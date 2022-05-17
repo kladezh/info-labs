@@ -94,7 +94,7 @@ namespace SEM4_LR7
 
         public override string GenerateDescription()
         {
-            return "Оффис " + base.GenerateDescription() + $" - Компания \"{_companyName}\"";
+            return "Офис " + base.GenerateDescription() + $" - Компания \"{_companyName}\"";
         }
     }
 
