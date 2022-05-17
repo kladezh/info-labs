@@ -56,11 +56,18 @@ namespace SEM4_LR6
 
     internal class Deck
     {
+        private const int _StandardCount = 54;
+
         private List<Card> _cards;
 
         public int Count
         {
             get => _cards.Count;
+        }
+
+        public void Add(Card card)
+        {
+            _cards.Add(card);
         }
 
         public Deck()
@@ -75,11 +82,15 @@ namespace SEM4_LR6
 
         public static Deck CreateStandard()
         {
-            const int Count = 54;
+            Deck deck = new Deck(_StandardCount);
 
-            Deck deck = new Deck(Count);
-
-            // creating cards in loop ...
+            foreach (Suit suit in Enum.GetValues(typeof(Suit)))
+            {
+                foreach (Rank rank in Enum.GetValues(typeof(Rank)))
+                {
+                    deck.Add(new Card(suit, rank));
+                }
+            }
 
             return deck;
         }
