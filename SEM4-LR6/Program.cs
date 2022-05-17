@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,6 +95,11 @@ namespace SEM4_LR6
 
             return deck;
         }
+
+        public void Shuffle()
+        {
+            _cards.Shuffle();
+        }
     }
 
     internal class Program
@@ -101,6 +107,32 @@ namespace SEM4_LR6
         static void Main(string[] args)
         {
             Deck deck = Deck.CreateStandard();
+        }
+    }
+
+    internal static class ListExtension
+    {
+        public static void Shuffle<T>(this IList<T> list)
+        {
+            /* List shuffle algorithm: 
+             * 
+             * https://stackoverflow.com/questions/273313/randomize-a-listt
+             * 
+             */
+
+            RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
+            int n = list.Count;
+            while (n > 1)
+            {
+                byte[] box = new byte[1];
+                do provider.GetBytes(box);
+                while (!(box[0] < n * (Byte.MaxValue / n)));
+                int k = (box[0] % n);
+                n--;
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
         }
     }
 }
