@@ -62,7 +62,7 @@ namespace SEM4_LR6
 
     internal class Deck
     {
-        private const int _StandardCount = 54;
+        private const int _StandardCount = 52;
 
         private List<Card> _cards;
 
