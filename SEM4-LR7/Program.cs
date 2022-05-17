@@ -120,8 +120,9 @@ namespace SEM4_LR7
             _rooms = new List<Room>();
         }
 
-        public double CalculateRoomRent(Room room)
+        public double CalculateRoomRent(int roomNumber)
         {
+            Room room = _rooms.Find(x => x.Number == roomNumber);
             return _baseRent * Convert.ToDouble(room.Area) * room.GetRentCondition();
         }
 
@@ -132,15 +133,6 @@ namespace SEM4_LR7
                 area += room.Area;
 
             return area;
-        }
-
-        public double CalculateTotalRent()
-        {
-            double rent = 0.0;
-            foreach (Room room in _rooms)
-                rent += CalculateRoomRent(room);
-
-            return rent;
         }
     }
 
