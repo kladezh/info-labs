@@ -31,6 +31,11 @@ namespace SEM4_LR7
             _area = area;
         }
 
+        virtual public string GenerateDescription()
+        {
+            return $"#{_number} - Площадь {_area} кв.м.";
+        }
+
         abstract public double GetRentCondition();
     }
 
@@ -53,10 +58,15 @@ namespace SEM4_LR7
             _tenantNames = tenantNames;
         }
 
+        public override string GenerateDescription()
+        {
+            return "Квартира " + base.GenerateDescription();
+        }
+
         public override double GetRentCondition()
         {
             return (1 + (double)_tenantNames.Count * 0.1);
-        }
+        } 
     }
 
     internal class Office : Room
@@ -80,6 +90,11 @@ namespace SEM4_LR7
         public override double GetRentCondition()
         {
             return 2;
+        }
+
+        public override string GenerateDescription()
+        {
+            return "Оффис " + base.GenerateDescription() + $" - Компания \"{_companyName}\"";
         }
     }
 
@@ -140,6 +155,11 @@ namespace SEM4_LR7
 
             return area;
         }
+
+        public string GenerateDescription()
+        {
+            return $"Здание #{_index} - Улица {_streetName} - Помещений {_rooms.Count} - базовая стоимость аренды за кв.м {_baseRent} руб";
+        }
     }
 
     internal class City
@@ -176,7 +196,7 @@ namespace SEM4_LR7
     {
         static void Main(string[] args)
         {
-            Building building = new Building("Маршала Воронова", 14, 7000);
+            Building building = new Building("Имени Кашина", 14, 7000);
 
             building.Rooms = new List<Room>()
             {
@@ -185,8 +205,23 @@ namespace SEM4_LR7
                 new Office(42, 20, "Blizzard Entertainment"),
             };
 
-            City city = new City("Волгоград");
+            City city = new City("Электросталь");
             city.Buildings.Add(building);
+
+
+            Console.WriteLine("Город " + city.Name);
+
+            Console.WriteLine($"\nЗдания [{city.Buildings.Count} шт]:");
+            foreach (Building build in city.Buildings)
+            {
+                Console.WriteLine(build.GenerateDescription());
+                foreach (Room room in building.Rooms)
+                {
+                    Console.WriteLine($"- {room.GenerateDescription()} - Аренда плата {building.CalculateRoomRent(room.Number)} руб");
+                }
+            }
+
+            Console.ReadKey();
         }
     }
 }
