@@ -16,19 +16,19 @@ namespace SEM4_LR6
     }
     internal enum Rank
     {
-        Ace = 11,
-        King = 10,
-        Queen = 10,
-        Jack = 10,
-        Ten = 10,
-        Nine = 9,
-        Eight = 8,
-        Seven = 7,
-        Six = 6,
-        Five = 5,
-        Four = 4,
+        Two = 2,
         Three = 3,
-        Two = 2
+        Four = 4,
+        Five = 5,
+        Six = 6,
+        Seven = 7,
+        Eight = 8,
+        Nine = 9,
+        Ten = 10,
+        Jack,
+        Queen,
+        King,
+        Ace,
     }
 
     internal class Card
