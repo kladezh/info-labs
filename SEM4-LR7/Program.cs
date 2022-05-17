@@ -31,7 +31,7 @@ namespace SEM4_LR7
             _area = area;
         }
 
-        abstract public double RentCondition();
+        abstract public double GetRentCondition();
     }
 
     internal class Flat : Room
@@ -53,7 +53,7 @@ namespace SEM4_LR7
             _tenantNames = tenantNames;
         }
 
-        public override double RentCondition()
+        public override double GetRentCondition()
         {
             return (1 + (double)_tenantNames.Count * 0.1);
         }
@@ -77,7 +77,7 @@ namespace SEM4_LR7
             _companyName = companyName;
         }
 
-        public override double RentCondition()
+        public override double GetRentCondition()
         {
             return 2;
         }
@@ -120,7 +120,12 @@ namespace SEM4_LR7
             _rooms = new List<Room>();
         }
 
-        public int TotalArea()
+        public double CalculateRoomRent(Room room)
+        {
+            return _baseRent * Convert.ToDouble(room.Area) * room.GetRentCondition();
+        }
+
+        public int CalculateTotalArea()
         {
             int area = 0;
             foreach (Room room in _rooms)
@@ -129,11 +134,11 @@ namespace SEM4_LR7
             return area;
         }
 
-        public double TotalRent()
+        public double CalculateTotalRent()
         {
             double rent = 0.0;
             foreach (Room room in _rooms)
-                rent += _baseRent * Convert.ToDouble(room.Area) * room.RentCondition();
+                rent += CalculateRoomRent(room);
 
             return rent;
         }
