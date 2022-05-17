@@ -53,6 +53,11 @@ namespace SEM4_LR6
             _suit = suit;
             _rank = rank;
         }
+
+        public override string ToString()
+        {
+            return string.Concat(_suit.ToString(), ' ', _rank.ToString());
+        }
     }
 
     internal class Deck
@@ -100,6 +105,15 @@ namespace SEM4_LR6
         {
             _cards.Shuffle();
         }
+
+        public override string ToString()
+        {
+            string result = "";
+            foreach(Card card in _cards)
+                result += string.Concat(card.ToString(), '\n');
+
+            return result;
+        }
     }
 
     internal class Program
@@ -107,6 +121,11 @@ namespace SEM4_LR6
         static void Main(string[] args)
         {
             Deck deck = Deck.CreateStandard();
+
+            Console.WriteLine("Сгенерированная колода карт:");
+            Console.WriteLine(deck.ToString());
+
+            Console.ReadKey();
         }
     }
 
