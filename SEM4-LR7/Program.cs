@@ -140,6 +140,14 @@ namespace SEM4_LR7
 
             _rooms = new List<Room>();
         }
+        public Building(string streetName, int index, double baseRent, List<Room> rooms)
+        {
+            _streetName = streetName;
+            _index = index;
+            _baseRent = baseRent;
+
+            _rooms = rooms;
+        }
 
         public double CalculateRoomRent(int roomNumber)
         {
@@ -196,25 +204,29 @@ namespace SEM4_LR7
     {
         static void Main(string[] args)
         {
-            Building building = new Building("Имени Кашина", 14, 7000);
-
-            building.Rooms = new List<Room>()
-            {
-                new Flat(10, 45, new List<string>() {"Иван Иванов, Марья Иванова"}),
-                new Flat(33, 50, new List<string>() {"Семен Семнов, Татьяна Семенова, Гриша Семенов"}),
-                new Office(42, 20, "Blizzard Entertainment"),
-            };
-
             City city = new City("Электросталь");
-            city.Buildings.Add(building);
+
+            city.Buildings = new List<Building>()
+            {
+                new Building("Имени Данилы", 14, 7000, new List<Room>()
+                {
+                    new Flat(10, 45, new List<string>() {"Иван Иванов, Марья Иванова"}),
+                    new Flat(33, 50, new List<string>() {"Семен Семнов, Татьяна Семенова, Гриша Семенов"}),
+                    new Office(42, 20, "Blizzard Entertainment"),
+                }),
+                new Building("Имени Кашина", 7, 10000, new List<Room>()
+                {
+                    new Office(33, 12, "Take-Two Interactive"),
+                }),
+            };
 
 
             Console.WriteLine("Город " + city.Name);
 
             Console.WriteLine($"\nЗдания [{city.Buildings.Count} шт]:");
-            foreach (Building build in city.Buildings)
+            foreach (Building building in city.Buildings)
             {
-                Console.WriteLine(build.GenerateDescription());
+                Console.WriteLine('\n' + building.GenerateDescription());
                 foreach (Room room in building.Rooms)
                 {
                     Console.WriteLine($"- {room.GenerateDescription()} - Аренда плата {building.CalculateRoomRent(room.Number)} руб");
