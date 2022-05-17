@@ -12,7 +12,7 @@ namespace SEM4_LR7
         private int _area;
 
         public int Number
-        { 
+        {
             get => _number;
             set => _number = value;
         }
@@ -107,6 +107,12 @@ namespace SEM4_LR7
             set => _baseRent = value;
         }
 
+        public List<Room> Rooms
+        {
+            get => _rooms;
+            set => _rooms = value;
+        }
+
         public Building()
         {
             _rooms = new List<Room>();
@@ -149,7 +155,7 @@ namespace SEM4_LR7
         }
 
         public List<Building> Buildings
-        { 
+        {
             get => _buildings;
             set => _buildings = value;
         }
@@ -170,6 +176,17 @@ namespace SEM4_LR7
     {
         static void Main(string[] args)
         {
+            Building building = new Building("Маршала Воронова", 14, 7000);
+
+            building.Rooms = new List<Room>()
+            {
+                new Flat(10, 45, new List<string>() {"Иван Иванов, Марья Иванова"}),
+                new Flat(33, 50, new List<string>() {"Семен Семнов, Татьяна Семенова, Гриша Семенов"}),
+                new Office(42, 20, "Blizzard Entertainment"),
+            };
+
+            City city = new City("Волгоград");
+            city.Buildings.Add(building);
         }
     }
 }
