@@ -111,7 +111,7 @@ namespace SEM4_LR6
             string result = "";
             foreach(Card card in _cards)
                 result += string.Concat(card.ToString(), '\n');
-
+            
             return result;
         }
     }
@@ -123,6 +123,11 @@ namespace SEM4_LR6
             Deck deck = Deck.CreateStandard();
 
             Console.WriteLine("Сгенерированная колода карт:");
+            Console.WriteLine(deck.ToString());
+
+            deck.Shuffle();
+
+            Console.WriteLine("Перетасованная колода карт:");
             Console.WriteLine(deck.ToString());
 
             Console.ReadKey();
