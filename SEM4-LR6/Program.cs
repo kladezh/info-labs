@@ -71,11 +71,6 @@ namespace SEM4_LR6
             get => _cards.Count;
         }
 
-        public void Add(Card card)
-        {
-            _cards.Add(card);
-        }
-
         public Deck()
         {
             _cards = new List<Card>();
@@ -84,6 +79,33 @@ namespace SEM4_LR6
         public Deck(int count)
         {
             _cards = new List<Card>(count);
+        }
+
+        public void Add(Card card)
+        {
+            _cards.Add(card);
+        }
+
+        public Card Take()
+        {
+            int index = _cards.Count - 1;
+
+            Card top = _cards[index];
+
+            _cards.RemoveAt(index);
+
+            return top;
+        }
+
+        public List<Card> Take(int count)
+        {
+            int index = this.Count - count;
+
+            List<Card> top = _cards.GetRange(index, count);
+
+            _cards.RemoveRange(index, count);
+
+            return top;
         }
 
         public static Deck CreateStandard()
@@ -122,13 +144,30 @@ namespace SEM4_LR6
         {
             Deck deck = Deck.CreateStandard();
 
-            Console.WriteLine("Сгенерированная колода карт:");
+            Console.WriteLine($"Сгенерированная колода карт [{deck.Count} шт]:");
             Console.WriteLine(deck.ToString());
 
             deck.Shuffle();
 
-            Console.WriteLine("Перетасованная колода карт:");
+            Console.WriteLine($"Перетасованная колода карт [{deck.Count} шт]:");
             Console.WriteLine(deck.ToString());
+
+            Console.WriteLine("\nВзять карту...\n");
+
+            Card topCard = deck.Take();
+
+            Console.WriteLine("Карта:");
+            Console.WriteLine(topCard.ToString());
+
+            Console.WriteLine("\nВзять 6 карт...\n");
+
+            List<Card> takedCards = deck.Take(6);
+
+            Console.WriteLine("Карты:");
+            foreach (Card card in takedCards)
+                Console.WriteLine(card.ToString());
+
+            Console.WriteLine($"\nКол-во карт в колоде [{deck.Count} шт]");
 
             Console.ReadKey();
         }
