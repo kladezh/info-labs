@@ -2,7 +2,7 @@
 
 namespace CityHousing
 {
-    public abstract class Room : IComparable
+    public abstract class Room : IComparable<Room>
     {
         private int _number;
         private int _area;
@@ -34,10 +34,12 @@ namespace CityHousing
 
         abstract public double GetRentCondition();
 
-        int IComparable.CompareTo(object obj)
+        public int CompareTo(Room other)
         {
-            if (obj is Room other) return this.Area.CompareTo(other.Area);
-            else throw new NotImplementedException();
+            if (other is null) 
+                return 1;
+
+            return this.Area.CompareTo(other.Area);
         }
     }
 }

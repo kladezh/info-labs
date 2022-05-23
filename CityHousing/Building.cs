@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CityHousing
 {
-    public class Building : IComparable
+    public class Building : IComparable<Building>
     {
         private string _streetName;
         private int _index;
@@ -74,10 +74,12 @@ namespace CityHousing
             return $"Здание #{_index} - Улица {_streetName} - Помещений {_rooms.Count} - базовая стоимость аренды за кв.м {_baseRent} руб";
         }
 
-        public int CompareTo(object obj)
+        public int CompareTo(Building other)
         {
-            if(obj is Building other) return this.CalculateTotalArea().CompareTo(other.CalculateTotalArea());
-            else throw new NotImplementedException();
+            if(other is null)
+                return 1;
+
+            return this.CalculateTotalArea().CompareTo(other.CalculateTotalArea());
         }
     }
 }
