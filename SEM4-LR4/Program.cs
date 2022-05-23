@@ -10,7 +10,7 @@ namespace TestLabNET
 
         static void Main(string[] args)
         {
-            string filepath = "C:\\Users\\yamsh\\Desktop\\test.txt";
+            string filepath = "test.txt";
             Console.WriteLine("Путь к файлу:");
             Console.WriteLine(filepath);
 
