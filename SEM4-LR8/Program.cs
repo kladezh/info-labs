@@ -40,11 +40,20 @@ namespace SEM4_LR8
 
             Console.WriteLine("Сортировка комнат в здании по площади:\n");
 
-            building.Sort();
+            building.Rooms.Sort();
 
             foreach (Room room in building.Rooms)
             {
-                Console.WriteLine($"- {room.GenerateDescription()} - Аренда плата {building.CalculateRoomRent(room.Number)} руб");
+                Console.WriteLine(room.GenerateDescription());
+            }
+
+            Console.WriteLine("\nСортировка комнат в здании по номеру:\n");
+
+            building.Rooms.Sort((x, y) => x.Number.CompareTo(y.Number));
+
+            foreach (Room room in building.Rooms)
+            {
+                Console.WriteLine(room.GenerateDescription());
             }
 
             Console.ReadKey();

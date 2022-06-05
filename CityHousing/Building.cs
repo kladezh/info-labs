@@ -74,11 +74,6 @@ namespace CityHousing
             return $"Здание #{_index} - Улица {_streetName} - Помещений {_rooms.Count} - базовая стоимость аренды за кв.м {_baseRent} руб";
         }
 
-        public void Sort()
-        {
-            _rooms.Sort((Room x, Room y) => x.CompareTo(y));
-        }
-
         public int CompareTo(Building other)
         {
             if(other is null)
