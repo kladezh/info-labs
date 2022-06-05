@@ -20,7 +20,7 @@ namespace SEM4_LR8
             {
                 new Flat(10, 45, new List<string>() {"Иван Иванов" , "Марья Иванова"}),
                 new Flat(33, 50, new List<string>() {"Семен Семнов", "Татьяна Семенова", "Гриша Семенов"}),
-                new Office(42, 20, "Blizzard Entertainment"),
+                new Office(42, 20, "Blizzard"),
             });
 
             city.Buildings.Add(building);
@@ -37,11 +37,11 @@ namespace SEM4_LR8
             }
 
             Console.WriteLine("\n---------------\n");
-
+            Console.WriteLine("Отсортировать комнаты в здании.\n");
             TaskSort(building);
 
             Console.WriteLine("\n---------------\n");
-
+            Console.WriteLine("Поиск комнат в здании.\n");
             TaskSearch(building);
 
             Console.ReadKey();
@@ -49,9 +49,9 @@ namespace SEM4_LR8
 
         static void TaskSort(Building building)
         {
-            Console.WriteLine("Отсортировать комнаты в здании. Выберите свойство:");
-            Console.WriteLine("По номеру  - 1");
-            Console.WriteLine("По площади - 2");
+            Console.WriteLine("Выберите свойство:");
+            Console.WriteLine("1 - По номеру");
+            Console.WriteLine("2 - По площади");
             Console.Write("\nВвод: ");
             int choice = int.Parse(Console.ReadLine());
 
@@ -64,24 +64,22 @@ namespace SEM4_LR8
                     building.Rooms.Sort();
                     break;
                 default:
-                    Console.WriteLine("Неверный введенное значение...");
-                    break;
+                    Console.WriteLine("Неверно введенное значение...");
+                    return;
             }
 
-            Console.WriteLine("Сортировка комнат:\n");
+            Console.WriteLine("\nСортировка комнат:");
             foreach (Room room in building.Rooms)
-                Console.WriteLine(room.GenerateDescription());
+                Console.WriteLine("- " + room.GenerateDescription());
         }
 
         static void TaskSearch(Building building)
         {
             IEnumerable<Room> selectedRooms;
 
-            Console.WriteLine("Посик комнаты в здании.");
-
             Console.WriteLine("Выберите объект:");
-            Console.WriteLine("\"Квартира\"  - 1");
-            Console.WriteLine("\"Офис\"      - 2");
+            Console.WriteLine("1 - \"Квартира\"");
+            Console.WriteLine("2 - \"Офис\"");
             Console.Write("\nВвод: ");
 
             int objectChoice = int.Parse(Console.ReadLine());
@@ -96,15 +94,15 @@ namespace SEM4_LR8
                             if (room is Flat flat) flats.Add(flat);
                         }
 
-                        Console.WriteLine("Выберите свойство:");
-                        Console.WriteLine("\"Номер\"   - 1");
-                        Console.WriteLine("\"Площадь\" - 2");
-                        Console.WriteLine("\"Имя жителя\" - 3");
+                        Console.WriteLine("\nВыберите свойство:");
+                        Console.WriteLine("1 - \"Номер\"");
+                        Console.WriteLine("2 - \"Площадь\"");
+                        Console.WriteLine("3 - \"Имя жителя\"");
                         Console.Write("\nВвод: ");
 
                         int fieldChoice = int.Parse(Console.ReadLine());
 
-                        Console.Write("\nВведите значение:");
+                        Console.Write("\nВведите значение: ");
                         switch (fieldChoice)
                         {
                             case 1:
@@ -126,7 +124,7 @@ namespace SEM4_LR8
                                                 select flat;
                                 break;
                             default:
-                                Console.WriteLine("Неверный введенное значение...");
+                                Console.WriteLine("Неверно введенное значение...");
                                 return;
                         }
 
@@ -140,15 +138,15 @@ namespace SEM4_LR8
                             if (room is Office office) offices.Add(office);
                         }
 
-                        Console.WriteLine("Выберите свойство:");
-                        Console.WriteLine("\"Номер\"   - 1");
-                        Console.WriteLine("\"Площадь\" - 2");
-                        Console.WriteLine("\"Название компании\" - 3");
+                        Console.WriteLine("\nВыберите свойство:");
+                        Console.WriteLine("1 - \"Номер\"");
+                        Console.WriteLine("2 - \"Площадь\"");
+                        Console.WriteLine("3 - \"Название компании\"");
                         Console.Write("\nВвод: ");
 
                         int fieldChoice = int.Parse(Console.ReadLine());
 
-                        Console.Write("\nВведите значение:");
+                        Console.Write("\nВведите значение: ");
                         switch (fieldChoice)
                         {
                             case 1:
@@ -170,20 +168,23 @@ namespace SEM4_LR8
                                                 select office;
                                 break;
                             default:
-                                Console.WriteLine("Неверный введенное значение...");
+                                Console.WriteLine("Неверно введенное значение...");
                                 return;
                         }
 
                         break;
                     }
                 default:
-                    Console.WriteLine("Неверный введенное значение...");
+                    Console.WriteLine("Неверно введенное значение...");
                     return;
             }
 
-            Console.WriteLine("Результат:");
-            foreach (Room room in selectedRooms)
-                Console.WriteLine(room.GenerateDescription());
+            Console.WriteLine("\nРезультат:");
+            if (selectedRooms.Count() != 0)
+            {
+                foreach (Room room in selectedRooms)
+                    Console.WriteLine("- " + room.GenerateDescription());
+            } else Console.WriteLine("Таких комнат не нашлось...");
         }
     }
 }
