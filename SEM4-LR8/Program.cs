@@ -12,6 +12,42 @@ namespace SEM4_LR8
     {
         static void Main(string[] args)
         {
+            City city = new City("Электросталь");
+
+            Console.WriteLine("Город " + city.Name);
+
+            Building building = new Building("Имени Данилы", 14, 7000, new List<Room>()
+            {
+                new Flat(10, 45, new List<string>() {"Иван Иванов" , "Марья Иванова"}),
+                new Flat(33, 50, new List<string>() {"Семен Семнов", "Татьяна Семенова", "Гриша Семенов"}),
+                new Office(42, 20, "Blizzard Entertainment"),
+            });
+
+            city.Buildings.Add(building);
+
+            Console.WriteLine($"\nЗдания [{city.Buildings.Count} шт]:");
+
+            foreach (Building build in city.Buildings)
+            {
+                Console.WriteLine('\n' + build.GenerateDescription());
+                foreach (Room room in build.Rooms)
+                {
+                    Console.WriteLine($"- {room.GenerateDescription()} - Аренда плата {build.CalculateRoomRent(room.Number)} руб");
+                }
+            }
+
+            Console.WriteLine("\n---------------\n");
+
+            Console.WriteLine("Сортировка комнат в здании по площади:\n");
+
+            building.Sort();
+
+            foreach (Room room in building.Rooms)
+            {
+                Console.WriteLine($"- {room.GenerateDescription()} - Аренда плата {building.CalculateRoomRent(room.Number)} руб");
+            }
+
+            Console.ReadKey();
         }
     }
 }
