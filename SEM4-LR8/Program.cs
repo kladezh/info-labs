@@ -75,7 +75,115 @@ namespace SEM4_LR8
 
         static void TaskSearch(Building building)
         {
-            Console.WriteLine("Поиск");
+            IEnumerable<Room> selectedRooms;
+
+            Console.WriteLine("Посик комнаты в здании.");
+
+            Console.WriteLine("Выберите объект:");
+            Console.WriteLine("\"Квартира\"  - 1");
+            Console.WriteLine("\"Офис\"      - 2");
+            Console.Write("\nВвод: ");
+
+            int objectChoice = int.Parse(Console.ReadLine());
+
+            switch (objectChoice)
+            {
+                case 1:
+                    {
+                        List<Flat> flats = new List<Flat>();
+                        foreach (Room room in building.Rooms)
+                        {
+                            if (room is Flat flat) flats.Add(flat);
+                        }
+
+                        Console.WriteLine("Выберите свойство:");
+                        Console.WriteLine("\"Номер\"   - 1");
+                        Console.WriteLine("\"Площадь\" - 2");
+                        Console.WriteLine("\"Имя жителя\" - 3");
+                        Console.Write("\nВвод: ");
+
+                        int fieldChoice = int.Parse(Console.ReadLine());
+
+                        Console.Write("\nВведите значение:");
+                        switch (fieldChoice)
+                        {
+                            case 1:
+                                int numberValue = int.Parse(Console.ReadLine());
+                                selectedRooms = from flat in flats
+                                                where flat.Number.Equals(numberValue)
+                                                select flat;
+                                break;
+                            case 2:
+                                int areaValue = int.Parse(Console.ReadLine());
+                                selectedRooms = from flat in flats
+                                                where flat.Area.Equals(areaValue)
+                                                select flat;
+                                break;
+                            case 3:
+                                string tenantNameValue = Console.ReadLine();
+                                selectedRooms = from flat in flats
+                                                where flat.TenantNames.Contains(tenantNameValue)
+                                                select flat;
+                                break;
+                            default:
+                                Console.WriteLine("Неверный введенное значение...");
+                                return;
+                        }
+
+                        break;
+                    }
+                case 2:
+                    {
+                        List<Office> offices = new List<Office>();
+                        foreach (Room room in building.Rooms)
+                        {
+                            if (room is Office office) offices.Add(office);
+                        }
+
+                        Console.WriteLine("Выберите свойство:");
+                        Console.WriteLine("\"Номер\"   - 1");
+                        Console.WriteLine("\"Площадь\" - 2");
+                        Console.WriteLine("\"Название компании\" - 3");
+                        Console.Write("\nВвод: ");
+
+                        int fieldChoice = int.Parse(Console.ReadLine());
+
+                        Console.Write("\nВведите значение:");
+                        switch (fieldChoice)
+                        {
+                            case 1:
+                                int numberValue = int.Parse(Console.ReadLine());
+                                selectedRooms = from office in offices
+                                                where office.Number.Equals(numberValue)
+                                                select office;
+                                break;
+                            case 2:
+                                int areaValue = int.Parse(Console.ReadLine());
+                                selectedRooms = from office in offices
+                                                where office.Area.Equals(areaValue)
+                                                select office;
+                                break;
+                            case 3:
+                                string companyNameValue = Console.ReadLine();
+                                selectedRooms = from office in offices
+                                                where office.CompanyName.Equals(companyNameValue)
+                                                select office;
+                                break;
+                            default:
+                                Console.WriteLine("Неверный введенное значение...");
+                                return;
+                        }
+
+                        break;
+                    }
+                default:
+                    Console.WriteLine("Неверный введенное значение...");
+                    return;
+            }
+
+            Console.WriteLine("Результат:");
+            foreach (Room room in selectedRooms)
+                Console.WriteLine(room.GenerateDescription());
         }
     }
 }
