@@ -38,6 +38,17 @@ namespace SEM4_LR8
 
             Console.WriteLine("\n---------------\n");
 
+            TaskSort(building);
+
+            Console.WriteLine("\n---------------\n");
+
+            TaskSearch(building);
+
+            Console.ReadKey();
+        }
+
+        static void TaskSort(Building building)
+        {
             Console.WriteLine("Отсортировать комнаты в здании. Выберите свойство:");
             Console.WriteLine("По номеру  - 1");
             Console.WriteLine("По площади - 2");
@@ -60,8 +71,11 @@ namespace SEM4_LR8
             Console.WriteLine("Сортировка комнат:\n");
             foreach (Room room in building.Rooms)
                 Console.WriteLine(room.GenerateDescription());
+        }
 
-            Console.ReadKey();
+        static void TaskSearch(Building building)
+        {
+            Console.WriteLine("Поиск");
         }
     }
 }
