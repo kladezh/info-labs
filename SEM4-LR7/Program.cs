@@ -18,8 +18,8 @@ namespace SEM4_LR7
             {
                 new Building("Имени Данилы", 14, 7000, new List<Room>()
                 {
-                    new Flat(10, 45, new List<string>() {"Иван Иванов, Марья Иванова"}),
-                    new Flat(33, 50, new List<string>() {"Семен Семнов, Татьяна Семенова, Гриша Семенов"}),
+                    new Flat(10, 45, new List<string>() {"Иван Иванов" , "Марья Иванова"}),
+                    new Flat(33, 50, new List<string>() {"Семен Семнов", "Татьяна Семенова", "Гриша Семенов"}),
                     new Office(42, 20, "Blizzard Entertainment"),
                 }),
                 new Building("Имени Кашина", 7, 10000, new List<Room>()

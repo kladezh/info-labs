@@ -24,7 +24,7 @@ namespace CityHousing
 
         public override string GenerateDescription()
         {
-            return "Квартира " + base.GenerateDescription();
+            return "Квартира " + base.GenerateDescription() + $" - Кол-во жителей: {_tenantNames.Count}";
         }
 
         public override double GetRentCondition()
