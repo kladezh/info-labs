@@ -38,23 +38,28 @@ namespace SEM4_LR8
 
             Console.WriteLine("\n---------------\n");
 
-            Console.WriteLine("Сортировка комнат в здании по площади:\n");
+            Console.WriteLine("Отсортировать комнаты в здании. Выберите свойство:");
+            Console.WriteLine("По номеру  - 1");
+            Console.WriteLine("По площади - 2");
+            Console.Write("\nВвод: ");
+            int choice = int.Parse(Console.ReadLine());
 
-            building.Rooms.Sort();
-
-            foreach (Room room in building.Rooms)
+            switch (choice)
             {
-                Console.WriteLine(room.GenerateDescription());
+                case 1:
+                    building.Rooms.Sort((x, y) => x.Number.CompareTo(y.Number));
+                    break;
+                case 2:
+                    building.Rooms.Sort();
+                    break;
+                default:
+                    Console.WriteLine("Неверный введенное значение...");
+                    break;
             }
 
-            Console.WriteLine("\nСортировка комнат в здании по номеру:\n");
-
-            building.Rooms.Sort((x, y) => x.Number.CompareTo(y.Number));
-
+            Console.WriteLine("Сортировка комнат:\n");
             foreach (Room room in building.Rooms)
-            {
                 Console.WriteLine(room.GenerateDescription());
-            }
 
             Console.ReadKey();
         }
